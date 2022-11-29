@@ -29,16 +29,17 @@
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
             android:id="@+id/imgDetails"/>
+
         <TextView
+            android:id="@+id/nameDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name ghế"
-            android:textSize="20dp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:id="@+id/nameDetails"
+            android:layout_below="@id/imgDetails"
             android:layout_marginLeft="10dp"
-            android:layout_below="@id/imgDetails"/>
+            android:text="Name ghế"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -210,6 +211,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:id="@+id/layoutMuaNgay"
                 android:background="@color/purple_500"
                 android:orientation="vertical">
                 <TextView

@@ -2,17 +2,74 @@ package com.example.appfuniture.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.appfuniture.Adapter.CategoryAdapter;
+import com.example.appfuniture.Adapter.GioHangAdapter;
+import com.example.appfuniture.Model.GioHang;
 import com.example.appfuniture.R;
+import com.example.appfuniture.Utils.Util;
 import com.example.appfuniture.databinding.ActivityGioHangBinding;
 
-public class GioHangActivity extends AppCompatActivity {
-    private ActivityGioHangBinding binding;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Locale;
+
+public class GioHangActivity extends AppCompatActivity implements GioHangAdapter.IGioHang {
+    private static ActivityGioHangBinding binding;
+    private static GioHangAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_gio_hang);
+        adapter = new GioHangAdapter(this);
+        initRecylerViewGioHang();
+        onClickBack();
+        EvenChangeUtil();
+
+    }
+
+    public static void EvenChangeUtil() {
+        int tongTien = 0;
+        int sl = 0;
+        for (int i=0;i<Util.gioHangArrayList.size();i++){
+            tongTien+= Util.gioHangArrayList.get(i).getGiaSp();
+            sl += Util.gioHangArrayList.get(i).getSoLuongSP();
+        }
+        binding.txtSoLuongSP.setText("("+sl+")");
+        binding.txtSoLuongMuaHang.setText("("+sl+")");
+        binding.txtTongTienThanhToan.setText("vnd "+NumberFormat.getNumberInstance(Locale.getDefault()).format(tongTien));
+    }
+
+    private void initRecylerViewGioHang() {
+        adapter = new GioHangAdapter(this);
+        binding.recylerGioHang.setLayoutManager(new LinearLayoutManager(this));
+        binding.recylerGioHang.setAdapter(adapter);
+    }
+
+    private void onClickBack() {
+        binding.imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               finish();
+            }
+        });
+    }
+
+    @Override
+    public int getCount() {
+        if (Util.gioHangArrayList==null){
+            return 0;
+        }
+        return Util.gioHangArrayList.size();
+    }
+
+    @Override
+    public GioHang getListGioHang(int position) {
+        return Util.gioHangArrayList.get(position);
     }
 }

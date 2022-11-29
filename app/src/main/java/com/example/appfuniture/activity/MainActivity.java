@@ -4,13 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.example.appfuniture.Adapter.CategoryAdapter;
 import com.example.appfuniture.Adapter.GiamGiaAdapter;
 import com.example.appfuniture.Adapter.PhoBienAdapter;
@@ -19,9 +15,7 @@ import com.example.appfuniture.Model.Category;
 import com.example.appfuniture.Model.GiamGia;
 import com.example.appfuniture.Model.Pager;
 import com.example.appfuniture.Model.Popular;
-import com.example.appfuniture.Model.User;
 import com.example.appfuniture.R;
-import com.example.appfuniture.SQLite.SQLiteHelper;
 import com.example.appfuniture.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
@@ -54,17 +48,17 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.i
 
     private void initRecylerPhoBien() {
         phoBienAdapter = new PhoBienAdapter(this);
-        binding.recylerPhoBien.setLayoutManager(new GridLayoutManager(this,2,GridLayoutManager.HORIZONTAL,false));
+        binding.recylerPhoBien.setLayoutManager(new GridLayoutManager(this,2));
         binding.recylerPhoBien.setAdapter(phoBienAdapter);
     }
 
     private void addDataPhoBien() {
-        phoBienArrayList.add(new Popular("Ghế xoay",R.drawable.ghe2,5,"2.610.000"));
-        phoBienArrayList.add(new Popular("Ghế Bành",R.drawable.ghe3,5,"3.610.000"));
-        phoBienArrayList.add(new Popular("Sofa LINNAS",R.drawable.sofa1, 4.5f,"4.610.000"));
-        phoBienArrayList.add(new Popular("Tủ PAX",R.drawable.tu,3.5f,"5.610.000"));
-        phoBienArrayList.add(new Popular("Đèn HEKTAR",R.drawable.den,5,"8.610.000"));
-        phoBienArrayList.add(new Popular("Ghế sofa",R.drawable.ghe4,5,"7.610.000"));
+        phoBienArrayList.add(new Popular("Ghế xoay",R.drawable.ghe2,5,2610000));
+        phoBienArrayList.add(new Popular("Ghế Bành",R.drawable.ghe3,5,3610000));
+        phoBienArrayList.add(new Popular("Sofa LINNAS",R.drawable.sofa1, 4.5f,4610000));
+        phoBienArrayList.add(new Popular("Tủ PAX",R.drawable.tu,3.5f,5610000));
+        phoBienArrayList.add(new Popular("Đèn HEKTAR",R.drawable.den,5,8610000));
+        phoBienArrayList.add(new Popular("Ghế sofa",R.drawable.ghe4,5,7610000));
     }
 
     private void addDataCategory() {

@@ -8,6 +8,8 @@
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
+            android:id="@+id/linea1"
+            android:layout_marginBottom="20dp"
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/imgBack"
@@ -25,16 +27,18 @@
                 android:id="@+id/txtGioHang"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(1)"
-                android:textSize="20dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_toRightOf="@id/txtGioHang"
                 android:layout_centerVertical="true"
-                android:padding="10dp"/>
+                android:layout_toRightOf="@id/txtGioHang"
+                android:padding="10dp"
+                android:text="(1)"
+                android:id="@+id/txtSoLuongSP"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
@@ -43,5 +47,74 @@
                 android:layout_marginRight="20dp"
                 android:layout_centerVertical="true"/>
         </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linea1"
+            android:layout_above="@id/linearThanhToan"
+            android:id="@+id/recylerGioHang"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:id="@+id/linearThanhToan"
+            android:background="#EAEAEA"
+            android:layout_marginBottom="20dp"
+            android:layout_above="@id/linearMuaHang">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng thanh toán"
+                android:textSize="18dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="vnd 0"
+                android:textColor="@color/purple_500"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/txtTongTienThanhToan"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/linearMuaHang"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/custom_btn"
+            android:layout_alignParentBottom="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mua hàng"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:gravity="center_horizontal"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(0)"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:id="@+id/txtSoLuongMuaHang"/>
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 </layout>

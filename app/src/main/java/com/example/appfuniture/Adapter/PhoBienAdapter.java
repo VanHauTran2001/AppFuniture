@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.appfuniture.Model.Popular;
 import com.example.appfuniture.databinding.ItemPhoBienBinding;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PhoBienAdapter extends RecyclerView.Adapter<PhoBienAdapter.PhoBienViewHolder> {
     private IPopular iPopular;
 
@@ -25,13 +28,14 @@ public class PhoBienAdapter extends RecyclerView.Adapter<PhoBienAdapter.PhoBienV
         return new PhoBienViewHolder(binding);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull PhoBienViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Popular popular = iPopular.getListPopular(position);
         holder.binding.namePopular.setText(popular.getNamePopular());
         holder.binding.imagePopular.setImageResource(popular.getImgPopular());
         holder.binding.rating.setRating(popular.getRating());
-        holder.binding.txtMoneyPopular.setText(popular.getMoneyPopular()+"vnd");
+        holder.binding.txtMoneyPopular.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format(popular.getMoneyPopular()) +" vnd");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

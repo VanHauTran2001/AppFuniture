@@ -57,15 +57,14 @@ public class SigninActivity extends AppCompatActivity {
                 String phone = binding.edtPhone.getText().toString().trim();
                 for(int i=0;i<userArrayList.size();i++){
                     if (phone.equals(userArrayList.get(i).getPhone())){
-                        startActivity(new Intent(SigninActivity.this, MainActivity.class));
                         check = true;
-
                     }else {
                         check = false;
                     }
                 }
                 if (check){
                     Toast.makeText(SigninActivity.this,"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SigninActivity.this, MainActivity.class));
                 }
                 else {
                     Toast.makeText(SigninActivity.this,"Đăng nhập thất bại",Toast.LENGTH_SHORT).show();

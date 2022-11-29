@@ -6,9 +6,9 @@ public class Popular implements Serializable {
     private String namePopular;
     private int imgPopular;
     private float rating;
-    private String moneyPopular;
+    private int moneyPopular;
 
-    public Popular(String namePopular, int imgPopular, float rating, String moneyPopular) {
+    public Popular(String namePopular, int imgPopular, float rating, int moneyPopular) {
         this.namePopular = namePopular;
         this.imgPopular = imgPopular;
         this.rating = rating;
@@ -42,11 +42,11 @@ public class Popular implements Serializable {
         this.rating = rating;
     }
 
-    public String getMoneyPopular() {
+    public int getMoneyPopular() {
         return moneyPopular;
     }
 
-    public void setMoneyPopular(String moneyPopular) {
+    public void setMoneyPopular(int moneyPopular) {
         this.moneyPopular = moneyPopular;
     }
 }
