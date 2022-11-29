@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.SignupActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:id="@+id/imgBack"
+            android:layout_marginTop="10dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng ký"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/user" />
+        </RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/home"
+            android:layout_marginTop="40dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOTH"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="@color/purple_500"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:inputType="number"
+            android:hint="Nhập OTP"
+            android:background="@drawable/custom_editext"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:id="@+id/edtPhone"
+            android:padding="15dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xác nhận"
+            android:textSize="25dp"
+            android:textAllCaps="false"
+            android:background="@drawable/custom_btn"
+            android:textColor="@color/white"
+            android:padding="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btnXacNhan"/>
+    </LinearLayout>
+</layout>
