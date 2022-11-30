@@ -45,6 +45,7 @@ public class SearchActivity extends AppCompatActivity implements PhoBienAdapter.
     }
 
     private void onClickSearchView() {
+        //Sử dụng searchView để tìm kiếm
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -58,6 +59,7 @@ public class SearchActivity extends AppCompatActivity implements PhoBienAdapter.
                     popularArrayList.addAll(searchArrayList);
                 }else {
                     for (Popular list : searchArrayList) {
+                        //So sánh nếu tên nếu giống sẽ thêm vào list mới
                         if (list.getNamePopular().toLowerCase(Locale.getDefault()).contains(newText.toLowerCase(Locale.getDefault()))){
                             popularArrayList.add(list);
                         }

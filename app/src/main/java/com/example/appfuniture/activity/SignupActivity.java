@@ -39,6 +39,7 @@ public class SignupActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(phone)){
                     Toast.makeText(SignupActivity.this,"Dữ liệu không được để trống !!!",Toast.LENGTH_SHORT).show();
                 }else {
+                    //Thêm dữ liệu số điện thoại vào trong bảng database User
                     sqLiteHelper.QueryData("INSERT INTO User VALUES(null,'" + phone + "')");
                     startActivity(new Intent(SignupActivity.this,ConfirmSignupActivity.class));
                 }

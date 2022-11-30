@@ -29,6 +29,7 @@ public class SigninActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_signin);
         initSQLite();
         userArrayList = new ArrayList<>();
+        //Lấy dữ liệu từ bảng User sau đó add vào list
         Cursor cursor = sqLiteHelper.getData("SELECT * FROM User");
         while (cursor.moveToNext()) {
             String phoneNumber = cursor.getString(1);
@@ -55,6 +56,7 @@ public class SigninActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String phone = binding.edtPhone.getText().toString().trim();
+                //Kiểm tra số điện thoại của người dùng nhập và số điện thoại đăng ký nếu giống nhau thì đăng nhập thành công
                 for(int i=0;i<userArrayList.size();i++){
                     if (phone.equals(userArrayList.get(i).getPhone())){
                         check = true;
@@ -73,6 +75,7 @@ public class SigninActivity extends AppCompatActivity {
         });
     }
     private void initSQLite() {
+        //Tạo bảng
         sqLiteHelper = new SQLiteHelper(SigninActivity.this,"Database.sqlite",null,1);
         sqLiteHelper.QueryData("CREATE TABLE IF NOT EXISTS User(Id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "Phone VARCHAR(100))");
