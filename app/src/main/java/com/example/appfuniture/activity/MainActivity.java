@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.i
     }
 
     private void initRecylerPhoBien() {
+        //khởi tạo adapter và hiển thị dữ liệu lên recyclerView
         phoBienAdapter = new PhoBienAdapter(this);
         binding.recylerPhoBien.setLayoutManager(new GridLayoutManager(this,2));
         binding.recylerPhoBien.setAdapter(phoBienAdapter);
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.i
     }
 
     private void customViewFliper() {
+        //Hiển thị các banner quản cáo
         ArrayList<Pager> pagerArrayList = new ArrayList<>();
         pagerArrayList.add(new Pager("https://img.pikbest.com/backgrounds/20210507/real-furniture-sofa-business-advertising-discount-banner-template_5944214.jpg!bwr800"));
         pagerArrayList.add(new Pager("https://admin.mhomedecor.com.vn/storage/media/v7dglvfPocxYNNrEbDGheXAHPSiw9teN6IR1CkDD.jpg"));
@@ -115,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.i
         runnable = new Runnable() {
             @Override
             public void run() {
+                //cài đặt thời gian cứ 4s là đổi sang ảnh khác
                 current =binding.viewPager.getCurrentItem();
                 current++;
                 if (current>=binding.viewPager.getAdapter().getCount()){
@@ -159,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.i
 
     @Override
     public void onClickItemPopular(int position) {
+        //Khi click vào item phổ biến thì sẽ truyền dữ liệu sang màn hình details
         Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
         Popular popular = phoBienArrayList.get(position);
         Bundle bundle = new Bundle();

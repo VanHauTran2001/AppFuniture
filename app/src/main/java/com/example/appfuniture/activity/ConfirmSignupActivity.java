@@ -19,13 +19,13 @@ public class ConfirmSignupActivity extends AppCompatActivity {
         binding.imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                finish(); //Quay lại màn hình cũ
             }
         });
         binding.btnXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ConfirmSignupActivity.this, SigninActivity.class));
+                startActivity(new Intent(ConfirmSignupActivity.this, SigninActivity.class)); //chuyển màn hình
             }
         });
     }

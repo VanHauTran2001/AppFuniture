@@ -32,12 +32,13 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void onClickMuaNgay() {
-        binding.layoutMuaNgay.setOnClickListener(new View.OnClickListener() {
+        binding.layoutMuaNgay.setOnClickListener(new View.OnClickListener() { //Xử lý sự kiện nút mua ngay
             @Override
             public void onClick(View view) {
                 if (Util.gioHangArrayList.size()>0){
-                    int soLuongSp = Integer.parseInt(binding.txtNumber.getText().toString());
+                    int soLuongSp = Integer.parseInt(binding.txtNumber.getText().toString()); //Lấy ra số lượng sản phẩm
                     boolean exits = false;
+                    //Kiểm tra nếu người dùng đặt cùng 1 sản phẩm thì sẽ tăng số lượng sản phẩm đó lên
                     for(int i=0;i<Util.gioHangArrayList.size();i++){
                         if (Util.gioHangArrayList.get(i).getTenSP().equals(popular.getNamePopular())){
                             Util.gioHangArrayList.get(i).setSoLuongSP(Util.gioHangArrayList.get(i).getSoLuongSP()+soLuongSp);
@@ -61,6 +62,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void customNumberOder() {
+        //Nút tăng số lượng
         binding.btnCong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +70,7 @@ public class DetailsActivity extends AppCompatActivity {
                 binding.txtNumber.setText(String.valueOf(numberOder));
             }
         });
+        //Nút giảm số lượng
         binding.btnTru.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,6 +83,7 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private void onBack() {
+        //Nút quay lại
         binding.imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +94,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void onShowData() {
+        //Nhận dữ liệu và hiển thị lên màn hình
         Intent intent = getIntent();
         popular = (Popular) intent.getSerializableExtra("popular");
         if (popular!=null){
