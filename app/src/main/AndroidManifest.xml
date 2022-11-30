@@ -16,6 +16,27 @@
         android:theme="@style/Theme.AppFuniture"
         tools:targetApi="31">
         <activity
+            android:name=".activity.TiepTucMuaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.ThanhToanActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.GioHangActivity"
             android:exported="false" />
         <activity

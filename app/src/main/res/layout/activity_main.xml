@@ -37,7 +37,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content">
 
-               <EditText
+               <TextView
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:layout_marginLeft="15dp"
@@ -46,6 +46,7 @@
                    android:drawableLeft="@drawable/ic_baseline_search_24"
                    android:drawablePadding="15dp"
                    android:hint="Tìm kiếm"
+                   android:id="@+id/edtSearch"
                    android:padding="15dp"
                    android:textColor="@color/black"
                    android:textSize="20dp" />

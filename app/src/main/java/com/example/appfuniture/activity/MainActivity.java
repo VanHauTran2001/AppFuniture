@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+
 import com.example.appfuniture.Adapter.CategoryAdapter;
 import com.example.appfuniture.Adapter.GiamGiaAdapter;
 import com.example.appfuniture.Adapter.PhoBienAdapter;
@@ -44,6 +46,16 @@ public class MainActivity extends AppCompatActivity implements CategoryAdapter.i
         initRecylerCategory();
         intiReclerGiamGia();
         initRecylerPhoBien();
+        onClickSearch();
+    }
+
+    private void onClickSearch() {
+        binding.edtSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SearchActivity.class));
+            }
+        });
     }
 
     private void initRecylerPhoBien() {

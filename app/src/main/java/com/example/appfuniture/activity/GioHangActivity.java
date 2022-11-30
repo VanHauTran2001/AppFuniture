@@ -22,6 +22,7 @@ import java.util.Locale;
 public class GioHangActivity extends AppCompatActivity implements GioHangAdapter.IGioHang {
     private static ActivityGioHangBinding binding;
     private static GioHangAdapter adapter;
+    int slMua = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +31,19 @@ public class GioHangActivity extends AppCompatActivity implements GioHangAdapter
         initRecylerViewGioHang();
         onClickBack();
         EvenChangeUtil();
+        onClickMuaHang();
+    }
 
+    private void onClickMuaHang() {
+        binding.linearMuaHang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GioHangActivity.this,ThanhToanActivity.class);
+                int sl = Integer.parseInt(binding.txtSoLuongMuaHang.getText().toString().trim());
+                intent.putExtra("soluong",sl);
+                startActivity(intent);
+            }
+        });
     }
 
     public static void EvenChangeUtil() {
@@ -41,7 +54,7 @@ public class GioHangActivity extends AppCompatActivity implements GioHangAdapter
             sl += Util.gioHangArrayList.get(i).getSoLuongSP();
         }
         binding.txtSoLuongSP.setText("("+sl+")");
-        binding.txtSoLuongMuaHang.setText("("+sl+")");
+        binding.txtSoLuongMuaHang.setText(sl+"");
         binding.txtTongTienThanhToan.setText("vnd "+NumberFormat.getNumberInstance(Locale.getDefault()).format(tongTien));
     }
 
